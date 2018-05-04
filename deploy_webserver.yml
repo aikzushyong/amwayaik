@@ -1,11 +1,11 @@
 ---
 - hosts: webservers
-  vars:
-    http_port: 80
-    max_clients: 200
     become: yes
     become_user: root
     become_method: sudo
+  vars:
+    http_port: 80
+    max_clients: 200
   tasks:
   - name: ensure apache is at the latest version
     yum:
