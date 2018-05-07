@@ -8,6 +8,7 @@
     max_clients: 200
     variable_to_be_replaced: 'Hello world'
     inline_variable: 'hello again'
+    list1: ['Template iterate','Template loop','Template item']
   tasks:
   - name: write the apache config file
     template:

@@ -6,3 +6,17 @@ Variable given as inline - {{ inline_variable }} - :)
 *** Apache ***
 http_port = {{ http_port }}
 max_clients =  {{ max_clients }}
+
+
+*** Loop test ***
+Ansible template for loop example
+{% for i in range(3)%}
+  This is the {{ i }}th variable
+{% endfor %}
+
+
+*** Loop test 2 ***
+This is an example of template module loop with a list.
+{% for item in list1 %}
+  {{ item }}
+{% endfor %}
