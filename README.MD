@@ -38,6 +38,16 @@ And add the following entry in gitsavvy-sublime.settings file to the path where 
 
 I don't have admin access to my work laptop so everything I used is portable version.
 
+Using GitSavvy
+```
+1. To enter into the git mode:
+Ctrl + Shft + P -> git:status 
+
+2. To update to git is to: 
+a. Stage
+b. Commit
+c. Push to github.
+```
 
 ## Deployment
 

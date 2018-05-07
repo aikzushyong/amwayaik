@@ -1,0 +1,16 @@
+---
+- hosts: webservers
+  become: yes
+  become_user: root
+  become_method: sudo
+  vars:
+    http_port: 80
+    max_clients: 200
+    variable_to_be_replaced: 'Hello world'
+    inline_variable: 'hello again'
+  tasks:
+  - name: write the apache config file
+    template:
+      src: roles/common/templates/hello_world.j2
+      dest: /tmp/hello_world.conf
+  
