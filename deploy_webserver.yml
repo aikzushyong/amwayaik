@@ -13,7 +13,7 @@
       state: latest
   - name: write the apache config file
     template:
-      src: roles/common/template/httpd.j2
+      src: roles/common/templates/httpd.j2
       dest: /etc/httpd/conf/httpd.conf
     notify:
     - restart apache
