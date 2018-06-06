@@ -4,7 +4,9 @@
   become_user: root
   become_method: sudo
   gather_facts: no
-
+  vars:
+    http_port: 80
+    max_clients: 200
   tasks:
   - name: Create the uptime wrapper shell script
     copy: 
