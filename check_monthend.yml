@@ -15,3 +15,7 @@
     shell: cat /tmp/uptime.sh
   - name: Execute the uptime script on target
     script: /tmp/uptime.sh
+  - name: Test dump http conf file
+    template:
+      src: roles/common/templates/httpd.j2
+      dest: /tmp/httpd.conf
