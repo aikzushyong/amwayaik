@@ -7,6 +7,9 @@
 
   tasks:
   - name: Create the uptime wrapper shell script
-    copy: src: roles/common/files/uptime.sh  dest: /tmp/uptime.sh  mode: 0755
+    copy: 
+      src: roles/common/files/uptime.sh
+      dest: /tmp/uptime.sh  
+      mode: 0755
   - name: Execute the uptime script on target
     script: /tmp/uptime.sh
