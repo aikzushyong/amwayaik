@@ -11,5 +11,7 @@
       src: roles/common/files/uptime.sh
       dest: /tmp/uptime.sh  
       mode: 0755
+  - name: Validate file has been copied
+    shell: ls -l /tmp/uptime.sh
   - name: Execute the uptime script on target
     script: /tmp/uptime.sh
