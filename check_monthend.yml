@@ -1,0 +1,15 @@
+---
+- hosts: monthend
+  become: yes
+  become_user: root
+  become_method: sudo
+  gather_facts: no
+
+  tasks:
+  - name: Create the uptime wrapper shell script
+    template:
+      src: roles/common/templates/uptime.j2
+      dest: /tmp/uptime.sh
+  - name: Execute the uptime script on target
+    script:
+      /tmp/uptime.sh
