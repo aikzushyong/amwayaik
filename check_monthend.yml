@@ -6,13 +6,5 @@
   gather_facts: no
   
   tasks:
-  - name: Create the uptime wrapper shell script
-    copy: 
-      src: roles/common/files/uptime.sh
-      dest: /root/uptime.sh  
-      mode: 0755
-  - name: Validate file has been copied
-    wait_for: 
-      path: /root/uptime.sh  
   - name: Execute the uptime script on target
-    script: sh /root/uptime.sh
+    script: sh roles/common/files/uptime.sh
