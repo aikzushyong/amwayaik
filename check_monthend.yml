@@ -14,10 +14,7 @@
       dest: /tmp/uptime.sh  
       mode: 0755
   - name: Validate file has been copied
-    shell: cat /tmp/uptime.sh
-  - name: Test dump http conf file
-    template:
-      src: roles/common/templates/httpd.j2
-      dest: /tmp/httpd.conf
+    wait_for: 
+      path: /tmp/uptime.sh  
   - name: Execute the uptime script on target
     script: /tmp/uptime.sh
