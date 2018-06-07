@@ -6,5 +6,5 @@
   gather_facts: no
   
   tasks:
-  - name: Execute the uptime script on target
-    script: sh roles/common/files/uptime.sh
+  - name: Execute the uptime script
+    script: roles/common/files/uptime.sh
