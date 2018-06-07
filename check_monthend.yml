@@ -17,4 +17,4 @@
     register: outi
 
   - debug: 
-    msg: "{{outi.stdout}}"
+    msg = "{{outi.stdout}}"
