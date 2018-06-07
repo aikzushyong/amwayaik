@@ -8,15 +8,13 @@
   tasks:
   - name: Execute the uptime script
     script: roles/common/files/uptime.sh
-    register: result
+    register: out
 
-  - debug: 
-    var: result
-    verbosity: 4
+  - debug: var=out.stdout_lines
 
   - name: Run with a raw module instead
     raw: uptime
-    register: out
+    register: outi
 
   - debug: 
-    msg: "{{out.stdout}}"
+    msg: "{{outi.stdout}}"
