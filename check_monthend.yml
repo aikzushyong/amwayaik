@@ -8,3 +8,5 @@
   tasks:
   - name: Execute the uptime script
     script: roles/common/files/uptime.sh
+  - name: Run with a raw module instead
+    raw: uptime
