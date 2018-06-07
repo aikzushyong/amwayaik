@@ -10,6 +10,7 @@
     script: roles/common/files/uptime.sh
     register: result
   - debug: 
-    msg: "{{result.stdout}}"
+    var: result
+    verbosity: 2
   - name: Run with a raw module instead
     raw: uptime
