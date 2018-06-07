@@ -14,7 +14,7 @@
 
   - name: Run with a raw module instead
     raw: uptime
-    register: outi
+    register: msg
 
   - debug: 
     msg = "{{outi.stdout}}"
