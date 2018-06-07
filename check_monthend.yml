@@ -4,17 +4,15 @@
   become_user: root
   become_method: sudo
   gather_facts: no
-  vars:
-    http_port: 80
-    max_clients: 200
+  
   tasks:
   - name: Create the uptime wrapper shell script
     copy: 
       src: roles/common/files/uptime.sh
-      dest: /tmp/uptime.sh  
+      dest: /root/uptime.sh  
       mode: 0755
   - name: Validate file has been copied
     wait_for: 
-      path: /tmp/uptime.sh  
+      path: /root/uptime.sh  
   - name: Execute the uptime script on target
-    script: /tmp/uptime.sh
+    script: /root/uptime.sh
