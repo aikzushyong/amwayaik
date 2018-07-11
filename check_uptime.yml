@@ -1,0 +1,14 @@
+---
+- hosts: monthend
+  become: yes
+  become_user: root
+  become_method: sudo
+  gather_facts: no
+  
+  tasks:
+  - name: Execute the uptime script
+    script: roles/common/files/uptime.sh
+    register: out
+
+  - debug: var=out.stdout_lines
+
